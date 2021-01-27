@@ -50,6 +50,6 @@
 </ul>
 
 <div *ngFor="let user of users">
-  <p>{{user.name}}</p>
-  <p>{{user.email}}</p>
+  <p [ngClass]="cssclass">{{user.name}}</p>
+  <p [ngStyle]="{'color':'green','font-size':'24px'}">{{user.email}}</p>
 </div>

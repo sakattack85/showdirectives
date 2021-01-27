@@ -7,6 +7,7 @@ import { User } from './user';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  cssclass="redbackground"
   title = 'showdirectives';
   disable:boolean=true;
   inputboxdata=""
