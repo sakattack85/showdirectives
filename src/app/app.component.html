@@ -1,55 +1,14 @@
-<p #myp>hi</p>
-<p (mouseover)="change($event)">{{title}}</p>
-
-
-<input (keyup)="evaluate()" type="text" name="" value="" [(ngModel)]="inputboxdata">
-{{inputboxdata}}
-<button [disabled]="disable"  type="button" name="button">Test</button>
-<button   type="button" name="button" (click)="reset()">Reset</button>
-<p>----------------------------------------------------------------------------</p>
-
-
-<p *ngIf="x>10; else elseBlock"> Show/Hide me</p>
-<ng-template #elseBlock>
-<p>Else show me</p>
-</ng-template>
-
-
-
-<div *ngIf="x<10; then thenBlock else elseBlock1">
-  <p>This not shown</p>
-
+<div class="container-fluid">
+  <nav class="row bg-dark">
+    <div class="col-12 nav">
+      <a href="#" class="nav-item nav-link" (click)="changeselector('recipes')">Recipes</a>
+      <a href="#" class="nav-item nav-link" (click)="changeselector('products')">Products</a>
+    </div>
+  </nav>
+<div [ngSwitch]="selector" >
+  <app-product *ngSwitchCase="'products'"> </app-product>
+<app-recipe *ngSwitchCase="'recipes'"></app-recipe>
 </div>
 
-<ng-template #thenBlock>
-  <p>Show me on then</p>
-  </ng-template>
 
-  <ng-template #elseBlock1>
-    <p>Show me on else</p>
-    </ng-template>
-
-<div [ngSwitch]="option">
-<div *ngSwitchCase="'option1'">
-  <p>Option1</p>
-</div>
-
-  <div *ngSwitchCase="'option2'">
-    <p>Option2</p>
-  </div>
-
-  <div *ngSwitchCase="'option3'">
-<p>Option3</p>
-  </div>
-  <div *ngSwitchDefault>
-    <p>This is default</p>
-  </div>
-</div>
-<ul>
-  <li  *ngFor="let str of strarray ; let i=index"> {{i}}.{{str}}</li>
-</ul>
-
-<div *ngFor="let user of users">
-  <p [ngClass]="cssclass">{{user.name}}</p>
-  <p [ngStyle]="{'color':'green','font-size':'24px'}">{{user.email}}</p>
 </div>
