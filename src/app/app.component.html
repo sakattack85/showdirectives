@@ -1,1 +1,8 @@
-<p>hi</p>
+<p #myp>hi</p>
+<p (mouseover)="change($event)">{{title}}</p>
+
+
+<input (keyup)="evaluate()" type="text" name="" value="" [(ngModel)]="inputboxdata">
+{{inputboxdata}}
+<button [disabled]="disable"  type="button" name="button">Test</button>
+<button   type="button" name="button" (click)="reset()">Reset</button>
