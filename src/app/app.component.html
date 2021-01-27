@@ -6,3 +6,50 @@
 {{inputboxdata}}
 <button [disabled]="disable"  type="button" name="button">Test</button>
 <button   type="button" name="button" (click)="reset()">Reset</button>
+<p>----------------------------------------------------------------------------</p>
+
+
+<p *ngIf="x>10; else elseBlock"> Show/Hide me</p>
+<ng-template #elseBlock>
+<p>Else show me</p>
+</ng-template>
+
+
+
+<div *ngIf="x<10; then thenBlock else elseBlock1">
+  <p>This not shown</p>
+
+</div>
+
+<ng-template #thenBlock>
+  <p>Show me on then</p>
+  </ng-template>
+
+  <ng-template #elseBlock1>
+    <p>Show me on else</p>
+    </ng-template>
+
+<div [ngSwitch]="option">
+<div *ngSwitchCase="'option1'">
+  <p>Option1</p>
+</div>
+
+  <div *ngSwitchCase="'option2'">
+    <p>Option2</p>
+  </div>
+
+  <div *ngSwitchCase="'option3'">
+<p>Option3</p>
+  </div>
+  <div *ngSwitchDefault>
+    <p>This is default</p>
+  </div>
+</div>
+<ul>
+  <li  *ngFor="let str of strarray ; let i=index"> {{i}}.{{str}}</li>
+</ul>
+
+<div *ngFor="let user of users">
+  <p>{{user.name}}</p>
+  <p>{{user.email}}</p>
+</div>
